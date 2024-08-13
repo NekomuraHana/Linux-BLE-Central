@@ -22,7 +22,7 @@ async function scanDevice(devName,UUID){
                 validateService = await validate.helper.props();
                 await validate.helper.removeAllListeners();
                 console.log("service condition", validateService);
-                if(validateService.Name === devName && validateService.UUIDs[0] === UUID){
+                if(validateService.Name === devName && validateService.UUIDs.includes(UUID)){
                     targetDevice.push("success");
                     targetDevice.push(validateService.Address);
                     if('RSSI' in validateService){
