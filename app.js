@@ -16,6 +16,7 @@ async function scanDevice(devName,UUID){
       const devices = await adapter.devices();
       if(devices.length != 0){
         let validate = null;
+        let validateService = null;
         for(let i=0; devices.length>i; i++){
             try {
                 validate = await adapter.getDevice(devices[i]);
